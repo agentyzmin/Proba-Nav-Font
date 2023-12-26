@@ -1,0 +1,116 @@
+@font-face {
+    font-family: 'proba_nav2';
+    src: url('http://cdn.a3.kyiv.ua/ProbaNav2.1/probanav2-regular-webfont.eot');
+    src: url('http://cdn.a3.kyiv.ua/ProbaNav2.1/probanav2-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('http://cdn.a3.kyiv.ua/ProbaNav2.1/probanav2-regular-webfont.woff2') format('woff2'),
+         url('http://cdn.a3.kyiv.ua/ProbaNav2.1/probanav2-regular-webfont.woff') format('woff'),
+         url('http://cdn.a3.kyiv.ua/ProbaNav2.1/probanav2-regular-webfont.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'proba_nav2';
+    src: url('http://cdn.a3.kyiv.ua/ProbaNav2.1/probanav2-bold-webfont.eot');
+    src: url('http://cdn.a3.kyiv.ua/ProbaNav2.1/probanav2-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('http://cdn.a3.kyiv.ua/ProbaNav2.1/probanav2-bold-webfont.woff2') format('woff2'),
+         url('http://cdn.a3.kyiv.ua/ProbaNav2.1/probanav2-bold-webfont.woff') format('woff'),
+         url('http://cdn.a3.kyiv.ua/ProbaNav2.1/probanav2-bold-webfont.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+body {
+  font-family: "proba_nav2", sans-serif;
+  background-color: #111111;
+  margin: 0;
+  padding: 4px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+a {
+  color: rgb(13, 110, 253);
+  text-decoration-color: rgb(13, 110, 253);
+}
+
+.masonry-container {
+  -webkit-column-count: 6;
+     -moz-column-count: 6;
+          column-count: 6;
+    
+    -webkit-column-gap: 2px;
+       -moz-column-gap: 2px;
+            column-gap: 2px;
+}
+
+.masonry-item {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: -2px;
+  opacity: 0.7;
+}
+
+.masonry-item:hover {
+  opacity: 1;
+  
+  -webkit-animation: fadeInFromNone 0.5s ease-out;
+     -moz-animation: fadeInFromNone 0.5s ease-out;
+       -o-animation: fadeInFromNone 0.5s ease-out;
+          animation: fadeInFromNone 0.5s ease-out;
+}
+.masonry-item img {
+  display:block;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.font-block{
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  min-width: 40vw;
+  min-height: 40vh;
+
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1rem 3rem 3rem;
+
+  box-shadow: ;
+}
+
+.font-block h1 {
+  font-size: 3.5rem;
+  margin: 1.6rem 0 0.7rem;
+}
+
+.font-block p{
+  font-size: 1.25rem;
+  line-height: 140%;
+  max-width: 40rem;
+}
+
+.font-block .btn {
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #111;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 0.25rem;
+}
+
+@keyframes fadeInFromNone {
+    0% {
+        opacity: 0.7;
+    }
+
+    100% {
+
+        opacity: 1;
+    }
+}

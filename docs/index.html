@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+<body>
+  <div class="font-block">
+    <h1>Proba Nav2</h1>
+    <p>Неофіційний шрифт київської навігації: від схем та плакатів у метро до адресних покажчиків, розкладів та навігаційних стел.</p>
+    <p>Містить <a href="http://icons.a3.kyiv.ua/" target="_blank">транспортні піктограми</a>, лігатури, табличні цифри та інші opentype-фічі.</p>
+    <p style="margin-bottom: 2.5rem">Зробив Андрій Константинов (студія Mint Type) на основі свого шрифта Proba Pro, який став стандартом державних вебсайтів.</p>
+    <a class="btn" href="#">Завантажити</a>
+  </div>
+  <div class="masonry-container">
+    <div class="masonry-item"><img src="i/фото-10.jpg"></div>
+    <div class="masonry-item"><img src="i/_DSC0318.jpg"></div>
+    <div class="masonry-item"><img src="i/2016-06-23 16.43.59.jpg"></div>
+    <div class="masonry-item"><img src="i/2016-07-06 15.42.43.jpg"></div>
+    <div class="masonry-item"><img src="i/2016-10-07 10.44.40.jpg"></div>
+    <div class="masonry-item"><img src="i/25017443_525628831115012_5043159923337199616_n.jpg"></div>
+    <div class="masonry-item"><img src="i/29542011_1634239103325912_1419934379801426802_n.jpg"></div>
+    <div class="masonry-item"><img src="i/cover 2.jpg"></div>
+    <div class="masonry-item"><img src="i/cover.jpg"></div>
+    <div class="masonry-item"><img src="i/DSC_4286.jpg"></div>
+    <div class="masonry-item"><img src="i/DSC_4378.jpg"></div>
+    <div class="masonry-item"><img src="i/DSC_8507.jpg"></div>
+    <div class="masonry-item"><img src="i/IMG_0301-2-2.jpg"></div>
+    <div class="masonry-item"><img src="i/IMG_0383.JPG"></div>
+    <div class="masonry-item"><img src="i/IMG_0598.jpg"></div>
+    <div class="masonry-item"><img src="i/IMG_0624.jpg"></div>
+    <div class="masonry-item"><img src="i/IMG_0625.jpg"></div>
+    <div class="masonry-item"><img src="i/IMG_0632.jpg"></div>
+    <div class="masonry-item"><img src="i/IMG_1338.JPG"></div>
+    <div class="masonry-item"><img src="i/IMG_2017-11-13_185951_HDR.jpg"></div>
+    <div class="masonry-item"><img src="i/IMG_4046.JPG"></div>
+    <div class="masonry-item"><img src="i/IMG_5948.JPG"></div>
+    <div class="masonry-item"><img src="i/IMG_5963.JPG"></div>
+    <div class="masonry-item"><img src="i/IMG_6564.jpg"></div>
+    <div class="masonry-item"><img src="i/IMG_7350.jpg"></div>
+    <div class="masonry-item"><img src="i/IMG_9790.jpg"></div>
+    <div class="masonry-item"><img src="i/KyivSchedule-Preview-1.jpg"></div>
+    <div class="masonry-item"><img src="i/KyivSchedule-Preview-3.jpg"></div>
+    <div class="masonry-item"><img src="i/metro-posters-3.jpg"></div>
+    <div class="masonry-item"><img src="i/metro-posters-12.jpg"></div>
+    <div class="masonry-item"><img src="i/metro-posters-112.jpg"></div>
+    <div class="masonry-item"><img src="i/metro-posters-113.jpg"></div>
+    <div class="masonry-item"><img src="i/MetroMap-0.jpg"></div>
+    <div class="masonry-item"><img src="i/P1250607.JPG"></div>
+    <div class="masonry-item"><img src="i/P1250673.JPG"></div>
+    <div class="masonry-item"><img src="i/P1250821.JPG"></div>
+    <div class="masonry-item"><img src="i/P1260115.JPG"></div>
+    <div class="masonry-item"><img src="i/P1260166.JPG"></div>
+    <div class="masonry-item"><img src="i/photo_2023-10-14 18.31.57.jpeg"></div>
+    <div class="masonry-item"><img src="i/Preview_1.jpg"></div>
+  </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Get the masonry container and items
+    var container = document.querySelector('.masonry-container');
+    var items = document.querySelectorAll('.masonry-item');
+
+    // Convert NodeList to array
+    var itemsArray = Array.from(items);
+
+    // Shuffle the array
+    itemsArray.sort(function () {
+      return 0.5 - Math.random();
+    });
+
+    // Append items to the container in the new order
+    itemsArray.forEach(function (item) {
+      container.appendChild(item);
+    });
+  });
+</script>
+</body>
+</html>
