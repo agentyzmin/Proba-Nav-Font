@@ -182,9 +182,9 @@ a {
 
 
 .col-3 {
-  padding: 1em 2em;
+  padding: 1em 3em 1em 2em;
   display: grid;
-  grid-template-rows: 100px repeat(auto-fill, 120px);
+  grid-template-rows: 100px repeat(4, 120px);
   grid-template-columns: 2;
   grid-gap: 50px;
   grid-auto-flow: column;
