@@ -1,0 +1,55 @@
+@font-face {
+    font-family: 'ProbaNav2';
+    src: local('Proba Nav2 Thin'), url('ProbaNav2-Thin.woff2') format('woff2'), url('ProbaNav2-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ProbaNav2';
+    src: local('Proba Nav2 ExtraLight'), url('ProbaNav2-ExtraLight.woff2') format('woff2'), url('ProbaNav2-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ProbaNav2';
+    src: local('Proba Nav2 Light'), url('ProbaNav2-Light.woff2') format('woff2'), url('ProbaNav2-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ProbaNav2';
+    src: local('Proba Nav2 Regular'), url('ProbaNav2-Regular.woff2') format('woff2'), url('ProbaNav2-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ProbaNav2';
+    src: local('Proba Nav2 Medium'), url('ProbaNav2-Medium.woff2') format('woff2'), url('ProbaNav2-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ProbaNav2';
+    src: local('Proba Nav2 Bold'), url('ProbaNav2-Bold.woff2') format('woff2'), url('ProbaNav2-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ProbaNav2';
+    src: local('Proba Nav2 ExtraBold'), url('ProbaNav2-ExtraBold.woff2') format('woff2'), url('ProbaNav2-ExtraBold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ProbaNav2';
+    src: local('Proba Nav2 Black'), url('ProbaNav2-Black.woff2') format('woff2'), url('ProbaNav2-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
