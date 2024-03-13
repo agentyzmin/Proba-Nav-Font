@@ -32,6 +32,8 @@
   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
   <link rel="stylesheet" type="text/css" href="css/style.css">
 
+  <script src="https://cdn.jsdelivr.net/npm/opentype.js@latest/dist/opentype.min.js"></script>
+
 </head>
 <body>
   <div class="section wrapper">
@@ -42,8 +44,14 @@
           <h1>Proba Nav2</h1>
           <p>Неофіційний шрифт київської навігації: від схем та плакатів у метро до адресних покажчиків, розкладів та навігаційних стел.</p>
           <p>Містить <a href="http://icons.a3.kyiv.ua/" target="_blank">транспортні піктограми</a>, лігатури, табличні цифри та інші opentype-фічі.</p>
-          <p style="margin-bottom: 2.5rem">Зробив Андрій Константинов (студія Mint Type) на основі свого шрифта Proba Pro, який став стандартом державних вебсайтів.</p>
+          <p style="margin-bottom: 25px">Зробив Андрій Константинов (студія Mint Type) на основі свого шрифта Proba Pro, який став стандартом державних вебсайтів.</p>
           <a class="btn" href="#">Завантажити</a>
+          <a href="#">
+            Кейс на <img src="i/assets/behance.svg" height="30"> Behance
+          </a>
+          <a href="#">
+            Кейс на <img src="i/assets/github.svg" height="26"> Github
+          </a>
         </div>
         <div class="licence">
           <div>
@@ -59,14 +67,51 @@
         </div>
     </div>
     <div class="item item1">
+      <!-- <img src="i/designs/2017-04-EasterDay.jpeg" width="300"> -->
+      <div class="img-row">
+        <img src="i/designs/street-sign-name.png" height="250"> 
+        <img src="i/designs/street-sign-number.png" height="250">
+      </div>
     </div>
     <div class="item item2">
+      <div class="img-row">
+        
+      </div>
+      <div class="img-row">
+        <img src="i/designs/M1-red.jpeg" height="250">
+      </div>
     </div>
     <div class="item item3">
+      <div class="img-row">
+      <img src="i/designs/2017-09-Kartka-kyianyna-1.jpeg" height="400">
+      <img src="i/designs/Kyiv Parking Info - 01.jpeg" height="400" style="border-radius: 15px">
+      <img src="i/designs/Metro-Manners-1.png" height="400">
+      <img src="i/designs/2018-02-Sviatoshyn-5.jpeg" height="400">
+      </div>
+      <div class="img-row">
+      <!-- <img src="i/designs/Metro-Manners-1.png" width="300"> -->
+      <img src="i/designs/timetable-2019-14.png" width="800">
+      </div>
     </div>
     <div class="item item4">
+       <div class="img-row">
+          <img src="i/designs/metro-PlasticCard-2017-averse.png"   height="200">
+          <img src="i/designs/metro-PlasticCard-2017-reverse.png"  height="200">
+          <img src="i/designs/YellowFace@4x.png" height="200">
+       </div>
+       <div class="img-row">
+        <img src="i/designs/metromap_wagon_v1.12-660x690.png" width="800" style="border-radius: 10px;">
+       </div>
     </div>
     <div class="item item5">
+      <img src="i/designs/2020-12-NY3.png">
+      <img src="i/designs/2018-08-Independence.jpg">
+      <!-- <img src="i/designs/2016-10-new-turnstile.png"> -->
+      <img src="i/designs/timetable-2019-14.png" style="grid-column: span 2;">
+
+
+      <!-- <img src="i/designs/2018-12-TransportPass-Christmas-2.jpg" width="250"> -->
+      <!-- <img src="i/designs/Tariff-28-3.jpeg" width="400"> -->
     </div>
   </div>
 
@@ -124,10 +169,10 @@
   
   </div>
 
-<div class="section bg-white col-3">
+<div class=" bg-white col-3">
   <div class="" style="grid-column: span 2;">
   <h1>Накреслення</h1>
-  <p>Шрифт містить вісім накреслень: від надтокого до наджирнішого.</p>
+  <p>Шрифт містить вісім накреслень: від надтокого до найжирнішого.</p>
   </div>
 
     <p class="fw100 preview"><span class="fontname">RoadUA Thin – 100</span>      <br> Десь чув, що той фраєр привіз їхньому царю грильяж та класну шубу з пір’я ґави. </p>
@@ -139,6 +184,49 @@
     <p class="fw800 preview"><span class="fontname">RoadUA ExtraBold — 800</span>   <br> Фабрикуймо гідність, лящім їжею, ґав хапаймо, з’єднавці чаш! </p>
     <p class="fw900 preview"><span class="fontname">RoadUA Black — 900</span>     <br> Щастям б’єш жук їх глицю в фон й ґедзь пріч. </p>
 
+</div>
+
+
+
+
+
+<div class="section bg-white">
+
+    <style>
+      #glyph-preview {
+            font-size: 40px;
+            margin: 30px;
+            line-height: 1.5;
+
+        }
+
+        .glyph-container {
+            display: inline-block;
+            margin: 5px;
+          text-align: center;
+        }
+
+
+        .glyph-name {
+            font-size: 9px;
+            margin-top: 4px;
+/*          font-family: "Inter";*/
+        }
+
+        .glyph {
+            display: inline-block;
+            margin: 2px;
+            border: 1px solid #ddd;
+          border-radius: 4px;
+            padding: 4px;
+          width: 60px;
+          height: 60px;
+          text-align: center;
+        }
+      
+    </style>
+    <h1>Гліфи</h1>
+    <div id="glyph-preview"></div>
 </div>
 <!-- <div class="section bg-fontdrop">
   <h1>Гліфи</h1>
@@ -153,6 +241,45 @@
     <img src="i/assets/alternates.jpg" class="w-100">
 </div>
  -->
+
+<script type="text/javascript">
+      // Change the path to your font file
+        const fontPath = 'fonts/ProbaNav2-Regular.otf';
+
+        const glyphPreview = document.getElementById('glyph-preview');
+
+        // Load the font using OpenType.js
+        opentype.load(fontPath, function (err, font) {
+            if (err) {
+                console.error('Error loading font:', err);
+            } else {
+                // Display preview
+                displayAllGlyphs(font);
+            }
+        });
+
+        function displayAllGlyphs(font) {
+            glyphPreview.innerHTML = '';
+            for (let i = 4; i < font.numGlyphs; i++) {
+                const glyph = font.glyphs.get(i);
+                const glyphContainer = document.createElement('div');
+                glyphContainer.classList.add('glyph-container');
+
+                const glyphSpan = document.createElement('span');
+                glyphSpan.textContent = String.fromCodePoint(glyph.unicode || 0); // Show Unicode if available, otherwise use 0
+                glyphSpan.title = `Glyph index: ${i}, Unicode: ${glyph.unicode || 'N/A'}`;
+                glyphSpan.classList.add('glyph');
+                glyphContainer.appendChild(glyphSpan);
+
+                const glyphName = document.createElement('div');
+                glyphName.textContent = glyph.name || '';
+                glyphName.classList.add('glyph-name');
+                glyphContainer.appendChild(glyphName);
+
+                glyphPreview.appendChild(glyphContainer);
+            }
+        }
+</script>
 
 
 <script>

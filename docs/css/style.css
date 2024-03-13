@@ -1,7 +1,7 @@
 @import url("/fonts/ProbaNav2.css");
 
 :root{
-  --grid-margin: 8px;
+  --grid-margin: 20px;
 }
 
 body {
@@ -24,8 +24,6 @@ a {
   height: 100vh;
   overflow: hidden;
   position: relative;
-
-
 }
 
 .masonry-section .loud {
@@ -75,37 +73,81 @@ a {
     "a a a a b b b b"
     "c c c f f d d d"
     "c c c f f d d d"
-    "e e e e e d d d";
+    "c c c e e d d d";
   align-items: start;
   height: 100vh;
 }
 
 .item{
-  background-color: lightblue;
+/*  background-color: dimgrey;*/
   height: 100%;
   padding: 0;
   margin: 0;
+  overflow: hidden;
 /*  border-radius: 4px;*/
 }
+
+.img-row {
+  display: flex;
+/*  align-items: flex-start;*/
+  justify-content: inherit;
+  flex-wrap: nowrap;
+  gap: var(--grid-margin);
+/*  width: 600px;*/
+}
+
 .item1 {
   grid-area: a;
-  text-align: right;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: var(--grid-margin);
 }
+
 .item2 {
   grid-area: b;
+  display: flex;
+  align-items: flex-end;
+  gap: var(--grid-margin);
 }
+
+
 .item3 {
   grid-area: c;
-  text-align: right;
+  display: flex;
+/*  flex-direction: row-reverse;*/
+  flex-flow: wrap;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: var(--grid-margin);
 }
+
 .item4 {
   grid-area: d;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--grid-margin);
 }
+
 .item5 {
   grid-area: e;
-
-  text-align: right;
+/*  display: flex;*/
+/*  grid-template-columns: fit-content(3ch) fit-content(8ch) 1fr;*/
+/*  align-items: flex-start;*/
+/*  justify-content: flex-start;*/
+/*  gap: var(--grid-margin);*/
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: var(--grid-margin);
 }
+
+.item5 > img {
+    width:100%;
+    object-fit: cover; /* or "contain" */
+}
+
 .item6 {
   grid-area: f;
 
