@@ -46,13 +46,13 @@
           <p>Неофіційний шрифт київської навігації: від схем та плакатів у метро до адресних покажчиків, розкладів та навігаційних стел.</p>
           <p>Містить <a href="http://icons.a3.kyiv.ua/" target="_blank">транспортні піктограми</a>, лігатури, табличні цифри та інші opentype-фічі.</p>
           <p style="margin-bottom: 25px">Зробив Андрій Константинов (студія Mint Type) на основі свого шрифта Proba Pro, який став стандартом державних вебсайтів.</p>
-          <a class="btn" href="#">Завантажити</a>
-          <a href="#">
+          <a class="btn" href="https://github.com/agentyzmin/Proba-Nav-Font/releases/download/v.2/ProbaNav2.2.zip">Завантажити</a>
+          <!-- <a href="#">
             Кейс на <img src="i/assets/behance.svg" height="30"> Behance
-          </a>
-          <a href="#">
+          </a> -->
+          <!-- <a href="#">
             Кейс на <img src="i/assets/github.svg" height="26"> Github
-          </a>
+          </a> -->
         </div>
         <div class="licence">
           <div>
@@ -206,7 +206,17 @@
     <img src="i/assets/alternates.jpg" class="w-100">
 </div>
  -->
-
+<style type="text/css">
+  .glyph svg {
+      width: 100px;
+      height: 100px;
+    }
+     .glyph-path {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 5px;
+    }
+</style>
 <script type="text/javascript">
       // Change the path to your font file
         const fontPath = 'fonts/ProbaNav2-Regular.otf';
@@ -223,27 +233,55 @@
             }
         });
 
-        function displayAllGlyphs(font) {
-            glyphPreview.innerHTML = '';
-            for (let i = 4; i < font.numGlyphs; i++) {
-                const glyph = font.glyphs.get(i);
-                const glyphContainer = document.createElement('div');
-                glyphContainer.classList.add('glyph-container');
+        // function displayAllGlyphs(font) {
+        //     glyphPreview.innerHTML = '';
+        //     for (let i = 4; i < font.numGlyphs; i++) {
+        //         const glyph = font.glyphs.get(i);
+        //         console.log(glyph);
+        //         const glyphContainer = document.createElement('div');
+        //         glyphContainer.classList.add('glyph-container');
 
-                const glyphSpan = document.createElement('span');
-                glyphSpan.textContent = String.fromCodePoint(glyph.unicode || 0); // Show Unicode if available, otherwise use 0
-                glyphSpan.title = `Glyph index: ${i}, Unicode: ${glyph.unicode || 'N/A'}`;
-                glyphSpan.classList.add('glyph');
-                glyphContainer.appendChild(glyphSpan);
+        //         const glyphSpan = document.createElement('span');
+        //         glyphSpan.textContent = glyph.unicode ? String.fromCodePoint(glyph.unicode) : ''; // Show Unicode if available, otherwise use 0
+        //         glyphSpan.title = `Glyph index: ${i}, Unicode: ${glyph.unicode || 'N/A'}`;
+        //         glyphSpan.classList.add('glyph');
+        //         glyphContainer.appendChild(glyphSpan);
 
-                const glyphName = document.createElement('div');
-                glyphName.textContent = glyph.name || '';
-                glyphName.classList.add('glyph-name');
-                glyphContainer.appendChild(glyphName);
+        //         const glyphName = document.createElement('div');
+        //         glyphName.textContent = glyph.name || '';
+        //         glyphName.classList.add('glyph-name');
+        //         glyphContainer.appendChild(glyphName);
 
-                glyphPreview.appendChild(glyphContainer);
-            }
-        }
+        //         glyphPreview.appendChild(glyphContainer);
+        //     }
+        // }
+            function displayAllGlyphs(font) {
+      glyphPreview.innerHTML = '';
+
+      for (let i = 4; i < font.numGlyphs; i++) {
+        const glyph = font.glyphs.get(i);
+
+        const glyphContainer = document.createElement('div');
+        glyphContainer.classList.add('glyph-container');
+
+        const glyphPath = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        glyphPath.classList.add('glyph-path');
+
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        path.setAttribute('d', glyph.getPath(100, 0, 0).toPathData());
+        path.setAttribute('fill', 'black');
+        glyphPath.appendChild(path);
+
+        glyphContainer.appendChild(glyphPath);
+
+        const glyphName = document.createElement('div');
+        glyphName.textContent = glyph.name || '';
+        glyphName.classList.add('glyph-name');
+        glyphContainer.appendChild(glyphName);
+
+        glyphPreview.appendChild(glyphContainer);
+      }
+    }
 </script>
 
 
