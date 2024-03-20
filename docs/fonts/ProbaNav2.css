@@ -35,21 +35,14 @@
 
 @font-face {
     font-family: 'ProbaNav2';
+    src: local('Proba Nav2 Semibold'), url('ProbaNav2-Semibold.woff2') format('woff2'), url('ProbaNav2-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ProbaNav2';
     src: local('Proba Nav2 Bold'), url('ProbaNav2-Bold.woff2') format('woff2'), url('ProbaNav2-Bold.woff') format('woff');
     font-weight: 700;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'ProbaNav2';
-    src: local('Proba Nav2 ExtraBold'), url('ProbaNav2-ExtraBold.woff2') format('woff2'), url('ProbaNav2-ExtraBold.woff') format('woff');
-    font-weight: 800;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'ProbaNav2';
-    src: local('Proba Nav2 Black'), url('ProbaNav2-Black.woff2') format('woff2'), url('ProbaNav2-Black.woff') format('woff');
-    font-weight: 900;
     font-style: normal;
 }
