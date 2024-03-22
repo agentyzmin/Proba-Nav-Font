@@ -240,7 +240,7 @@ a {
 
 
 .col-3 {
-  padding: 1em 3em 1em 2em;
+  padding: 1rem 3rem 1rem 2rem;
   display: grid;
   grid-template-rows: 100px repeat(3, 120px);
   grid-template-columns: 2;
@@ -347,7 +347,9 @@ a {
 
 #glyph-preview {
   font-size: 40px;
-  margin: 30px;
+/*  margin: 30px;*/
+/*  margin: 1rem auto;*/
+  padding: 4rem 3rem 1rem 2rem;
   line-height: 1.5;
 }
 
@@ -375,11 +377,11 @@ a {
 
 @media (max-width: 768px) {
   #glyph-preview {
-    font-size: 40px;
-    margin: 10px;
-    line-height: 1.5;
+
+/*    margin: 10px;*/
+
   }
   .glyph-container {
-    margin: 3px;
+/*    margin: 3px;*/
   }
 }
