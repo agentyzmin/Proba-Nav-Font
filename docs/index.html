@@ -242,55 +242,126 @@
             }
         });
 
-        function displayAllGlyphs(font) {
-            glyphPreview.innerHTML = '';
-            for (let i = 4; i < font.numGlyphs; i++) {
-                const glyph = font.glyphs.get(i);
-                console.log(glyph);
-                const glyphContainer = document.createElement('div');
-                glyphContainer.classList.add('glyph-container');
 
-                const glyphSpan = document.createElement('span');
-                glyphSpan.textContent = glyph.unicode ? String.fromCodePoint(glyph.unicode) : ''; // Show Unicode if available, otherwise use 0
-                glyphSpan.title = `Glyph index: ${i}, Unicode: ${glyph.unicode || 'N/A'}`;
-                glyphSpan.classList.add('glyph');
-                glyphContainer.appendChild(glyphSpan);
+        // Show glyphs
+        // function displayAllGlyphs(font) {
+        //     glyphPreview.innerHTML = '';
+        //     for (let i = 4; i < font.numGlyphs; i++) {
+        //         const glyph = font.glyphs.get(i);
+        //         console.log(glyph);
+        //         const glyphContainer = document.createElement('div');
+        //         glyphContainer.classList.add('glyph-container');
 
-                const glyphName = document.createElement('div');
-                glyphName.textContent = glyph.name || '';
-                glyphName.classList.add('glyph-name');
-                glyphContainer.appendChild(glyphName);
+        //         const glyphSpan = document.createElement('span');
+        //         glyphSpan.textContent = glyph.unicodes ? String.fromCodePoint(glyph.unicodes) : ''; // Show Unicode if available, otherwise use 0
+        //         glyphSpan.title = `Glyph index: ${i}, Unicode: ${glyph.unicode || 'N/A'}`;
+        //         glyphSpan.classList.add('glyph');
+        //         glyphContainer.appendChild(glyphSpan);
 
-                glyphPreview.appendChild(glyphContainer);
-            }
-        }
-    //   function displayAllGlyphs(font) {
-    //   glyphPreview.innerHTML = '';
+        //         const glyphName = document.createElement('div');
+        //         glyphName.textContent = glyph.name || '';
+        //         glyphName.classList.add('glyph-name');
+        //         glyphContainer.appendChild(glyphName);
 
-    //   for (let i = 4; i < font.numGlyphs; i++) {
-    //     const glyph = font.glyphs.get(i);
+        //         glyphPreview.appendChild(glyphContainer);
+        //     }
+        // }
 
-    //     const glyphContainer = document.createElement('div');
-    //     glyphContainer.classList.add('glyph-container');
 
-    //     const glyphPath = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    //     glyphPath.classList.add('glyph-path');
+// Show with canvas
+// function displayAllGlyphs(font) {
+//     glyphPreview.innerHTML = '';
+//     const canvas = document.createElement('canvas');
+//     const ctx = canvas.getContext('2d');
+//     const fontSize = 120; // Set your desired font size
+//     canvas.width = fontSize*2; // Adjust canvas size according to your requirement
+//     canvas.height = fontSize*2;
 
-    //     const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-    //     path.setAttribute('d', glyph.getPath(100, 0, 0).toPathData());
-    //     path.setAttribute('fill', 'black');
-    //     glyphPath.appendChild(path);
+//     for (let i = 4; i < font.numGlyphs; i++) {
+//         const glyph = font.glyphs.get(i);
+//         console.log(glyph);
+//         const glyphContainer = document.createElement('div');
+//         glyphContainer.classList.add('glyph-container');
 
-    //     glyphContainer.appendChild(glyphPath);
+//         // Get glyph path
+//         const glyphPath = glyph.getPath(fontSize/2, fontSize/2, fontSize);
+        
+//         // Draw glyph path on canvas
+//         glyphPath.draw(ctx);
+        
+//         // Create image element from canvas and append to glyph container
+//         const glyphImage = document.createElement('img');
+//         glyphImage.src = canvas.toDataURL();
+//         glyphImage.title = `Glyph index: ${i}, Unicode: ${glyph.unicode || 'N/A'}`;
+//         glyphImage.classList.add('glyph');
+//         glyphContainer.appendChild(glyphImage);
 
-    //     const glyphName = document.createElement('div');
-    //     glyphName.textContent = glyph.name || '';
-    //     glyphName.classList.add('glyph-name');
-    //     glyphContainer.appendChild(glyphName);
+//         const glyphName = document.createElement('div');
+//         glyphName.textContent = glyph.name || '';
+//         glyphName.classList.add('glyph-name');
+//         glyphContainer.appendChild(glyphName);
 
-    //     glyphPreview.appendChild(glyphContainer);
-    //   }
-    // }
+//         glyphPreview.appendChild(glyphContainer);
+        
+//         // Clear canvas for next glyph
+//         ctx.clearRect(0, 0, canvas.width, canvas.height);
+//     }
+// }
+
+function displayAllGlyphs(font) {
+    glyphPreview.innerHTML = '';
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    const fontSize = 72; // Set your desired font size
+    const padding = 10; // Padding around the glyph
+    canvas.width = fontSize + 2 * padding;
+    canvas.height = fontSize + 2 * padding;
+
+    for (let i = 4; i < font.numGlyphs; i++) {
+        const glyph = font.glyphs.get(i);
+        console.log(glyph);
+        const glyphContainer = document.createElement('div');
+        glyphContainer.classList.add('glyph-container');
+
+        // Get glyph path
+        const glyphPath = glyph.getPath(0, 0, fontSize);
+
+        // Get bounding box of the glyph path
+        const bounds = glyphPath.getBoundingBox();
+
+        // Calculate horizontal offset to center the glyph path on the canvas
+        const offsetX = (canvas.width - (bounds.x2 - bounds.x1)) / 2 - bounds.x1;
+        const offsetY = fontSize*0.9;
+
+        // Clear canvas
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Translate context horizontally to center the glyph
+        ctx.translate(offsetX, offsetY);
+
+        // Draw glyph path on canvas
+        glyphPath.draw(ctx);
+
+        // Reset transformation
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+
+        // Create image element from canvas and append to glyph container
+        const glyphImage = document.createElement('img');
+        glyphImage.src = canvas.toDataURL();
+        glyphImage.title = `Glyph index: ${i}, Unicode: ${glyph.unicode || 'N/A'}`;
+        glyphImage.classList.add('glyph');
+        glyphContainer.appendChild(glyphImage);
+
+        const glyphName = document.createElement('div');
+        glyphName.textContent = glyph.name || '';
+        glyphName.classList.add('glyph-name');
+        glyphContainer.appendChild(glyphName);
+
+        glyphPreview.appendChild(glyphContainer);
+    }
+}
+
+
 </script>
 
 
