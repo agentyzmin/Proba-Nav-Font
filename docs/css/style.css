@@ -16,12 +16,13 @@ a {
 }
 
 .section {
-  min-height: 100vh;
+/*  min-height: 100vh;*/
+  height: 1100px;
   overflow: hidden;
 }
 
 .masonry-section {
-  height: 100vh;
+/*  height: 100vh;*/
   overflow: hidden;
   position: relative;
 }
@@ -81,7 +82,7 @@ a {
     "c c c f f d d d"
     "c c c e e d d d";
   align-items: start;
-  height: 100vh;
+/*  height: 100vh;*/
 }
 @media (max-width: 768px) {
   .wrapper {
@@ -124,6 +125,7 @@ a {
   grid-area: b;
   display: flex;
   align-items: flex-end;
+  justify-content: flex-start;
   gap: var(--grid-margin);
 }
 
@@ -241,39 +243,40 @@ a {
 
 .col-3 {
   padding: 1rem 3rem 1rem 2rem;
-  display: grid;
-  grid-template-rows: 100px repeat(3, 120px);
-  grid-template-columns: 2;
-  grid-gap: 50px;
-  grid-auto-flow: column;
+/*  display: grid;*/
+/*  grid-template-rows: repeat(2, auto);*/
+/*  grid-template-columns: 2;*/
+/*  grid-gap: 50px;*/
+/*  grid-auto-flow: column;*/
 }
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
   .col-3 {
     display: block;
   }
-}
+}*/
 
 .col-3 p {
   margin-block: 0;
   margin-inline: 0;
+  margin: 0 auto 1rem;
 /*  max-width:85%;*/
 }
 
 .preview{
-  font-size: 2.5em;
+  font-size: 2.5rem;
   line-height: 110%;
 }
 @media (max-width: 768px) {
   .preview {
-    font-size: 1.5em;
+    font-size: 1.5rem;
   }
 }
 
 
 .fontname{
   font-weight: 400;
-  color: grey;
-  font-size: 0.4em !important;
+  color: #58c773;
+  font-size: 0.8rem !important;
   padding: 0 0 0 0.2em;
 }
 @media (max-width: 768px) {
@@ -292,9 +295,9 @@ a {
 
 
 .masonry-container {
-  -webkit-column-count: 6;
-     -moz-column-count: 6;
-          column-count: 6;
+  -webkit-column-count: 5;
+     -moz-column-count: 5;
+          column-count: 5;
     
     -webkit-column-gap: 4px;
        -moz-column-gap: 4px;

@@ -22,9 +22,9 @@
     <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
 
     <!-- FAVICON -->
-    <link rel="icon"                          href="/assets/favicon/favicon.ico" sizes="any">
-    <link rel="icon"                          href="/assets/favicon/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon-precomposed"  href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon"                          href="/i/assets/favicon/favicon.ico" sizes="any">
+    <link rel="icon"                          href="/i/assets/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon-precomposed"  href="/i/assets/favicon/apple-touch-icon.png">
     <!-- <link rel="manifest"                      href="/i/favicon/manifest.webmanifest"> -->
     <!-- <meta name="theme-color" content="#000000"> -->
 
@@ -43,16 +43,28 @@
           <a href="https://a3.kyiv.ua" target="_blank"><img class="logo" src="i/assets/a3-logo-small-black.svg" ></a>
           <a href="https://minttype.com/" target="_blank"><img class="logo" src="i/assets/minttype.png" style="right: 95px;"></a>
           <h1>Proba Nav2</h1>
-          <p>Неофіційний шрифт київської навігації: від схем та плакатів у метро до адресних покажчиків, розкладів та навігаційних стел.</p>
-          <p>Містить <a href="http://icons.a3.kyiv.ua/" target="_blank">транспортні піктограми</a>, лігатури, табличні цифри та інші opentype-фічі.</p>
-          <p style="margin-bottom: 25px">Зробив Андрій Константинов (студія Mint Type) на основі свого шрифта Proba Pro, який став стандартом державних вебсайтів.</p>
-          <a class="btn" href="https://github.com/agentyzmin/Proba-Nav-Font/releases/download/v.2/ProbaNav2.2.zip">Завантажити</a>
-          <!-- <a href="#">
-            Кейс на <img src="i/assets/behance.svg" height="30"> Behance
-          </a> -->
-          <!-- <a href="#">
-            Кейс на <img src="i/assets/github.svg" height="26"> Github
-          </a> -->
+          <p>Неофіційний шрифт київської навігації: від схем та&nbsp;плакатів у&nbsp;метро до&nbsp;адресних покажчиків, розкладів та навігаційних стел.</p>
+          <p>Містить <a href="http://icons.a3.kyiv.ua/" target="_blank">транспортні піктограми</a>, лігатури, табличні цифри та&nbsp;інші opentype-фічі.</p>
+          <p style="margin-bottom: 25px">Зробив Андрій Константинов (студія Mint Type) на&nbsp;основі свого шрифта Proba Pro, який став стандартом державних вебсайтів.</p>
+          
+          <div style="display: flex; align-items: center;" >
+            <a class="btn"  style="margin-right:50px;" href="https://github.com/agentyzmin/Proba-Nav-Font/releases/download/v.2/ProbaNav2.2.zip">Завантажити</a>
+          
+<!--             <div style="width: 150px">
+            <a href="#" style="font-size: 20px; text-decoration: none;">
+              <p style="font-size: 14px; margin-bottom: 0; color: black;">Кейс на</p> 
+                <img src="i/assets/behance.svg" height="26" style="float:left; margin-right:6px; margin-top: -2px;"> <div style="color: black; text-decoration: underline;">Behance</div>
+              </a>
+            </div> -->
+
+            <div style="width: 150px;">
+              <a href="https://github.com/agentyzmin/Proba-Nav-Font" target="_blank" style="font-size: 20px; text-decoration: none;"> 
+              <p style="font-size: 14px; margin-bottom: 0; color: black;">Проєкт на</p>
+                <img src="i/assets/github.svg" height="22" style="float:left; margin-right:6px;"> <div style="color: black; text-decoration: underline;">Github</div>
+              </a>
+            </div>
+          </div>
+
         </div>
         <div class="licence">
           <div>
@@ -75,9 +87,6 @@
       </div>
     </div>
     <div class="item item2">
-      <div class="img-row">
-        
-      </div>
       <div class="img-row">
         <img src="i/designs/M1-red.jpeg" height="250">
       </div>
@@ -171,7 +180,7 @@
   </div>
 
 <div class=" bg-white col-3">
-  <div class="" style="grid-column: span 3;">
+  <div class="" style="grid-column: span 2;">
   <h1>Накреслення</h1>
   <p>Шрифт містить вісім накреслень: від надтокого до найжирнішого.</p>
   </div>
@@ -188,7 +197,7 @@
 </div>
 
 
-<div class="section bg-white">
+<div class=" bg-white">
     <div id="glyph-preview"></div>
 </div>
 
@@ -233,55 +242,55 @@
             }
         });
 
-        // function displayAllGlyphs(font) {
-        //     glyphPreview.innerHTML = '';
-        //     for (let i = 4; i < font.numGlyphs; i++) {
-        //         const glyph = font.glyphs.get(i);
-        //         console.log(glyph);
-        //         const glyphContainer = document.createElement('div');
-        //         glyphContainer.classList.add('glyph-container');
+        function displayAllGlyphs(font) {
+            glyphPreview.innerHTML = '';
+            for (let i = 4; i < font.numGlyphs; i++) {
+                const glyph = font.glyphs.get(i);
+                console.log(glyph);
+                const glyphContainer = document.createElement('div');
+                glyphContainer.classList.add('glyph-container');
 
-        //         const glyphSpan = document.createElement('span');
-        //         glyphSpan.textContent = glyph.unicode ? String.fromCodePoint(glyph.unicode) : ''; // Show Unicode if available, otherwise use 0
-        //         glyphSpan.title = `Glyph index: ${i}, Unicode: ${glyph.unicode || 'N/A'}`;
-        //         glyphSpan.classList.add('glyph');
-        //         glyphContainer.appendChild(glyphSpan);
+                const glyphSpan = document.createElement('span');
+                glyphSpan.textContent = glyph.unicode ? String.fromCodePoint(glyph.unicode) : ''; // Show Unicode if available, otherwise use 0
+                glyphSpan.title = `Glyph index: ${i}, Unicode: ${glyph.unicode || 'N/A'}`;
+                glyphSpan.classList.add('glyph');
+                glyphContainer.appendChild(glyphSpan);
 
-        //         const glyphName = document.createElement('div');
-        //         glyphName.textContent = glyph.name || '';
-        //         glyphName.classList.add('glyph-name');
-        //         glyphContainer.appendChild(glyphName);
+                const glyphName = document.createElement('div');
+                glyphName.textContent = glyph.name || '';
+                glyphName.classList.add('glyph-name');
+                glyphContainer.appendChild(glyphName);
 
-        //         glyphPreview.appendChild(glyphContainer);
-        //     }
-        // }
-            function displayAllGlyphs(font) {
-      glyphPreview.innerHTML = '';
+                glyphPreview.appendChild(glyphContainer);
+            }
+        }
+    //   function displayAllGlyphs(font) {
+    //   glyphPreview.innerHTML = '';
 
-      for (let i = 4; i < font.numGlyphs; i++) {
-        const glyph = font.glyphs.get(i);
+    //   for (let i = 4; i < font.numGlyphs; i++) {
+    //     const glyph = font.glyphs.get(i);
 
-        const glyphContainer = document.createElement('div');
-        glyphContainer.classList.add('glyph-container');
+    //     const glyphContainer = document.createElement('div');
+    //     glyphContainer.classList.add('glyph-container');
 
-        const glyphPath = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-        glyphPath.classList.add('glyph-path');
+    //     const glyphPath = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    //     glyphPath.classList.add('glyph-path');
 
-        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        path.setAttribute('d', glyph.getPath(100, 0, 0).toPathData());
-        path.setAttribute('fill', 'black');
-        glyphPath.appendChild(path);
+    //     const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    //     path.setAttribute('d', glyph.getPath(100, 0, 0).toPathData());
+    //     path.setAttribute('fill', 'black');
+    //     glyphPath.appendChild(path);
 
-        glyphContainer.appendChild(glyphPath);
+    //     glyphContainer.appendChild(glyphPath);
 
-        const glyphName = document.createElement('div');
-        glyphName.textContent = glyph.name || '';
-        glyphName.classList.add('glyph-name');
-        glyphContainer.appendChild(glyphName);
+    //     const glyphName = document.createElement('div');
+    //     glyphName.textContent = glyph.name || '';
+    //     glyphName.classList.add('glyph-name');
+    //     glyphContainer.appendChild(glyphName);
 
-        glyphPreview.appendChild(glyphContainer);
-      }
-    }
+    //     glyphPreview.appendChild(glyphContainer);
+    //   }
+    // }
 </script>
 
 
